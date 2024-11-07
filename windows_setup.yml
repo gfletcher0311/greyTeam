@@ -11,7 +11,7 @@
         --image WinSrv2022-2024.7
         --boot-from-volume 100
         --nic net-id=abbf3cf1-3be6-4c07-9e0d-763336d4f66d
-        --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.9"
+        --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.10"
         --key-name GrayTeam
         Concessions
       ignore_errors: yes
@@ -23,7 +23,7 @@
         --image WinSrv2022-2024.7
         --boot-from-volume 100
         --nic net-id=abbf3cf1-3be6-4c07-9e0d-763336d4f66d
-        --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.10"
+        --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.11"
         --key-name GrayTeam
         Elephant
       ignore_errors: yes
@@ -35,7 +35,7 @@
         --image Win10-21H2
         --boot-from-volume 100
         --nic net-id=abbf3cf1-3be6-4c07-9e0d-763336d4f66d
-        --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.11"
+        --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.12"
         --key-name GrayTeam
         Frog
       ignore_errors: yes
@@ -47,7 +47,7 @@
         --image WinXP-SP5
         --boot-from-volume 100
         --nic net-id=abbf3cf1-3be6-4c07-9e0d-763336d4f66d
-        --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.12"
+        --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.13"
         --key-name GrayTeam
         Tortoise
       ignore_errors: yes
@@ -59,7 +59,7 @@
         --image Win10-21H2
         --boot-from-volume 100
         --nic net-id=abbf3cf1-3be6-4c07-9e0d-763336d4f66d
-        --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.13"
+        --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.14"
         --key-name GrayTeam
         Monkey
       ignore_errors: yes
