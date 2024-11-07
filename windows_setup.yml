@@ -1,6 +1,6 @@
 - name: Windows Setup # This ansible script will setup and deploy al windows boxes
   gather_facts: no
-  hosts: windows
+  hosts: localhost
   environment:
     ANSIBLE_HOST_KEY_CHECKING: "False"  # Comes in handy later when sshing into a new box
   tasks:
