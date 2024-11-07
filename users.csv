@@ -1,0 +1,14 @@
+FirstName,LastName,Username,GroupType
+Zoo,Keeper,zookeeper,Domain Admins
+Lion,Tamer,liontamer,Domain Admins
+Safari,Guide,safariguide,Domain Users
+Giraffe,Groomer,giraffegroomer,Domain Users
+Fish,Trainer,fishtrainer,Domain Users
+Tortoise,Flipper,tortoiseflipper,Domain Users
+Orca,Trainer,orcatrainer,Local Admins
+Panda,SafetySpecialist,pandasafetyspecialist,Local Admins
+Bee,Keeper,beekeeper,Local Users
+Crocodile,Feeder,crocodilefeeder,Local Users
+Cage,Cleaner,cagecleaner,Local Users
+Bird,Feeder,birdfeeder,Local Users
+Seal,Waterer,sealwaterer,Local Users

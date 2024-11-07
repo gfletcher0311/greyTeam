@@ -1,0 +1,26 @@
+---
+- name: Setup AD and add users
+  hosts: windowsAD
+  tasks:
+    - name: copy scripts and csv
+      win_copy:
+        src: '{{ item.src }}'
+        dest: '{{ item.dest }}'
+      with_items:
+        - { src: '/home/debian/Downloads/installAD.ps1', dest: 'C:\Users\Administrator\Downloads' }
+        - { src: '/home/debian/Downloads/adUsers.ps1', dest: 'C:\Users\Administrator\Downloads' }
+        - { src: '/home/debian/Downloads/users.csv', dest: 'C:\Users\Administrator\Downloads' }
+
+    - name: execute createAD
+      win_shell: |
+        powershell.exe -ExecutionPolicy Bypass -File 'C:\Users\Administrator\Downloads\installAD.ps1'
+
+    - name: Waiting for server to be back online
+      pause:
+        seconds: 300
+
+    - name: execute addUsers
+      win_shell: |
+        powershell.exe -ExecutionPolicy Bypass -File 'C:\Users\Administrator\Downloads\adUsers.ps1'
+
+
