@@ -1,0 +1,21 @@
+---
+
+- name: Join windows machines to the domain
+  hosts: windows_hosts
+  gaher_facts: no
+  tasks:
+
+    - name: Join machine to domain
+    win_domain_membership:
+      dns_domain_name: "seneca.zoo"
+      domain_admin_user: "seneca\\administrator"
+      domain_admin_password: "z00!"
+      hostname: "{{ hostname }}"
+      state: domain
+    register: domain_join_result
+
+
+
+    - name: reboot if necessary
+      win_rebot:
+      when: domain_join_result.reboot_required
