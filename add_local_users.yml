@@ -1,0 +1,27 @@
+---
+- name: Add local admins and users
+  hosts: windows_hosts
+  gather_facts: no
+  tasks:
+    - name: Read CSV file for user accounts
+      ansible.builtin.read_csv:
+        path: local_users.csv
+      register: user_list
+
+    - name: Create local users and add to group
+      win_user:
+        name: "{{ item.username }}"
+        password: "z00!"
+        password_never_expires: yes
+        logon_password_change: no
+        state: present
+      loop: "{{ user_list.list }}"
+      register: created_users
+
+    - name: Add user to appropriate group
+      win_group_membership:
+        name: "{{ item.group }}"
+        members:
+          - "{{ item.username }}"
+        state: present
+      loop: "{{ user_list.list }}"
