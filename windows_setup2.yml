@@ -4,31 +4,7 @@
   environment:
     ANSIBLE_HOST_KEY_CHECKING: "False"  # Comes in handy later when sshing into a new box
   tasks:
-    - name: Create AD Server
-      command: >
-        openstack server create
-        --flavor large
-        --image WinSrv2022-2024.7
-        --boot-from-volume 100
-        --nic net-id=abbf3cf1-3be6-4c07-9e0d-763336d4f66d
-        --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.10"
-        --key-name GrayTeam
-        Concessions
-      ignore_errors: yes
-
-    - name: Create DNS Server
-      command: >
-        openstack server create 
-        --flavor large
-        --image WinSrv2022-2024.7
-        --boot-from-volume 100
-        --nic net-id=abbf3cf1-3be6-4c07-9e0d-763336d4f66d
-        --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.11"
-        --key-name GrayTeam
-        Elephant
-      ignore_errors: yes
-
-    - name: Create Windows XP box
+    - name: Create Tortoise
       command: >
         openstack server create
         --flavor medium
@@ -36,6 +12,7 @@
         --boot-from-volume 100
         --nic net-id=abbf3cf1-3be6-4c07-9e0d-763336d4f66d
         --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.12"
+        --user-data prepare-ansible-for-windows
         --key-name GrayTeam
         Tortoise
       ignore_errors: yes
@@ -48,6 +25,7 @@
         --boot-from-volume 100
         --nic net-id=abbf3cf1-3be6-4c07-9e0d-763336d4f66d
         --nic net-id=1f760c4b-02ee-4a27-bc95-aebc5cbae0e1,v4-fixed-ip="10.1.0.13"
+        --user-data prepare-ansible-for-windows
         --key-name GrayTeam
         Monkey
       ignore_errors: yes
