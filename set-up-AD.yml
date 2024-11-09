@@ -7,9 +7,9 @@
         src: '{{ item.src }}'
         dest: '{{ item.dest }}'
       with_items:
-        - { src: '/home/debian/grayteam/Gavin_F_git/greyTeam/installAD.ps1', dest: 'C:\Users\Administrator\Downloads' }
-        - { src: '/home/debian/grayteam/Gavin_F_git/greyTeam/adUsers.ps1', dest: 'C:\Users\Administrator\Downloads' }
-        - { src: '/home/debian/grayteam/Gavin_F_git/greyTeam/users.csv', dest: 'C:\Users\Administrator\Downloads' }
+        - { src: '/home/debian/Gavin_F_stuff/greyTeam/installAD.ps1', dest: 'C:\Users\Administrator\Downloads' }
+        - { src: '/home/debian/Gavin_F_stuff/greyTeam/adUsers.ps1', dest: 'C:\Users\Administrator\Downloads' }
+        - { src: '/home/debian/Gavin_F_stuff/greyTeam/users.csv', dest: 'C:\Users\Administrator\Downloads' }
 
     - name: execute createAD
       win_shell: |
