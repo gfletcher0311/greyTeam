@@ -19,7 +19,7 @@ foreach ($user in $users) {
         -Name ($user.FirstName + " " + $user.LastName) `
         -SamAccountName $user.Username `
         -UserPrincipalName ($user.Username+"@"+$ADDomainName) `
-        -AccountPassword (ConvertTo-SecureString "z00!" -AsPlainText -Force) `
+        -AccountPassword (ConvertTo-SecureString "z00.ChangeMe123!" -AsPlainText -Force) `
         -Enabled $true `
         -Server "seneca.zoo" 
     Write-Host "Created user: $($user.FirstName) $($user.LastName) in domain: $ADDomainName"

@@ -1,5 +1,5 @@
 ---
-
+# Ensure that the preferrd DNS server is either (DNS SERVER) and the secondary is (AD Domain Controller)
 - name: Join Windows machines to the domain
   hosts: windows_hosts
   gather_facts: no

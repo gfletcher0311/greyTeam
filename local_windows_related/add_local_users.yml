@@ -5,7 +5,7 @@
   tasks:
     - name: copy powershell script
       ansible.windows.win_copy:
-        src: ./addlocalUsers.ps1
+        src: /home/debian/Gavin_F_stuff/greyTeam/local_windows_related/addlocalusers.ps1
         dest: C:\Users\greyTeam\Downloads\addlocalusers.ps1
 
     - name: run powershell script

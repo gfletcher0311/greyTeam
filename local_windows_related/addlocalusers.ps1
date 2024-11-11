@@ -8,19 +8,18 @@ $users = @(
     @{Name="sealwaterer"; Group="Users"}
 )
 
-
 foreach ($user in $users) {
-	$username = $user.Name
-	$group = $user.Group
+    $username = $user.Name
+    $group = $user.Group
 
+    if (!(Get-LocalUser -Name $username -ErrorAction SilentlyContinue)) {
+        New-LocalUser -Name $username -Password (ConvertTo-SecureString "z00.ChangeMe123!" -AsPlainText -Force) -PasswordNeverExpires
+        Write-Host "Created user: $username"
+    } else {
+        Write-Host "User $username already exists"
+    }
 
-	if(!(Get-LocalUser -Name $username -ErrorAction silentlyContinue)) {
-		New-LocalUser -Name $username -PAssword (ConvertTo-SecureString "z00!" -AsPlainText -Force) -PasswordNeverExpires
-		Write-Host "Created user: $username"
-	} else {
-		Write-Host "User $username already exists"
-	}
-
-	Add-LocalGroupMember -Group $group -Member $username --ErrorAction silentlyContinue
-	Write-Host "Added user $username to group $group"
-
+    # Add the user to the specified group
+    Add-LocalGroupMember -Group $group -Member $username -ErrorAction SilentlyContinue
+    Write-Host "Added user $username to group $group"
+}

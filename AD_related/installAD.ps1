@@ -1,7 +1,7 @@
 #Varaibles for quick changes during a competition
 $ADDomainName = "seneca.zoo"
 $ADDomainNetBiosName = "seneca"
-$ADPassword = "z00!"
+$ADPassword = "z00.ChangeMe123!"
 # Install AD DS
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 
